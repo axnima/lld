@@ -2,20 +2,19 @@
 
 An ordered curriculum for object modeling, machine coding, concurrent algorithms, backend APIs, persistence, and debugging. These are practice specifications, not reference solutions. No finite list covers every interview variation; the variants below deliberately cover the recurring failure modes and design choices.
 
-## How to use this repository
+## Start here
 
-1. Follow the numbered phases and problem folders. Complete the core before its variants; extension-heavy exercises can span several sessions.
-2. Pick one primary language for a first pass. Go is a useful first choice for the semaphore/DAG interview; Python or TypeScript is equally valid for service modeling. Then implement the same contract idiomatically in the other two languages.
-3. Each folder has a prompt, ordered variants, acceptance checks, and `python/`, `go/`, `typescript/` workspaces. Empty workspace markers preserve the folders in Git. A master checkbox means the core, listed variants, language passes, and review are complete; partial progress lives in that problem's README.
-4. First implement the core in memory unless persistence is explicitly required. Add a database or HTTP server only in the corresponding variant. Do not add distributed infrastructure to a local interview problem.
-5. Keep APIs, invariants, and observable behavior consistent across languages; do not mechanically translate synchronization primitives.
+**[STUDY_PLAN.md](STUDY_PLAN.md) is the source of truth for session order, scope, progress, and pace.** This README is the full exercise catalogue; individual problem READMEs retain their detailed prompts and variants.
 
-## A realistic schedule
+- **15 LLD breadth sessions**, using **30 focus modules** as exercise material.
+- **58 optional LLD modules** for later depth; all 88 LLD projects are preserved.
+- **8 resume review bundles**, drawing on the 48 existing technology labs.
+- **23 planned sessions/bundles total**, not 136 mandatory daily assignments. Bundles and difficult sessions may take multiple sittings.
+- Use Go first. Python/TypeScript ports and additional variants follow the breadth pass.
 
-- Breadth pass: about 24 weeks at 8–12 hours/week, one primary language, roughly 3–5 cores/week depending on complexity. This is a planning estimate, not a promise to finish every extension.
-- Weeks 1–3: phase 01 and early phase 02. Weeks 4–6: finish phase 02 and phase 03. Weeks 7–10: phase 04. Weeks 11–14: phase 05. Weeks 15–18: phase 06. Weeks 19–22: phase 07. Weeks 23–24: phase 08 and weak-area repeats.
-- Depth and portability pass: budget another 12–24+ weeks for variants and the other languages. Completing every variation in all three languages is substantially more than a four-week plan.
-- Interview in two weeks? Prioritize language/testing toolkit → semaphore limiter → blocking queue → worker pool → sequential topo → semaphore DAG → rate limiter → idempotency → ticket booking → one timed mock. Return to the full order afterward.
+Folders containing `_(focus)` are representative exercises; `_(optional)` folders are later projects. Number gaps preserve the original catalogue order. Finish a session's stated outcome, run a few meaningful checks, explain it, then move to the next topic. Full per-module checklists remain available for deeper study and need not all be completed for session progress.
+
+The master catalogue checkboxes track full module attempts; the session checkboxes in STUDY_PLAN.md track the shorter first pass. Optional means lower priority for this learning plan, not impossible in an interview. Testing stays embedded in exercises; the standalone testing curriculum is optional.
 
 ## Session protocol and completion gate
 
@@ -70,119 +69,119 @@ Use these topic references while implementing; this plan does not depend on Java
 
 ### 01. Language, modeling, and test foundations
 
-- [ ] 001. [Language toolkit](01_foundations/01_language_toolkit/README.md)
-- [ ] 002. [Testing toolkit](01_foundations/02_testing_toolkit/README.md)
-- [ ] 003. [Money, time, and identifiers](01_foundations/03_money_time_identifiers/README.md)
-- [ ] 004. [SOLID and composition](01_foundations/04_solid_composition/README.md)
-- [ ] 005. [Behavioral patterns](01_foundations/05_behavioral_patterns/README.md)
-- [ ] 006. [Creational and structural patterns](01_foundations/06_creational_structural_patterns/README.md)
-- [ ] 007. [Collections and iterators](01_foundations/07_collections_iterators/README.md)
-- [ ] 008. [API contracts and validation](01_foundations/08_api_contracts/README.md)
+- [ ] 001. [Language toolkit](<01_language_and_design/01_language_toolkit_(focus)/README.md>)
+- [ ] 002. [Testing toolkit](<01_language_and_design/02_testing_toolkit_(optional)/README.md>) **[Optional — depth]**
+- [ ] 003. [Money, time, and identifiers](<01_language_and_design/03_money_time_identifiers_(focus)/README.md>)
+- [ ] 004. [SOLID and composition](<01_language_and_design/04_solid_composition_(focus)/README.md>)
+- [ ] 005. [Behavioral patterns](<01_language_and_design/05_behavioral_patterns_(focus)/README.md>)
+- [ ] 006. [Creational and structural patterns](<01_language_and_design/06_creational_structural_patterns_(optional)/README.md>) **[Optional — depth]**
+- [ ] 007. [Collections and iterators](<01_language_and_design/07_collections_iterators_(optional)/README.md>) **[Optional — depth]**
+- [ ] 008. [API contracts and validation](<01_language_and_design/08_api_contracts_(optional)/README.md>) **[Optional — depth]**
 
 ### 02. Concurrency primitives and coordination
 
-- [ ] 009. [Thread-safe counter](02_concurrency_primitives/01_thread_safe_counter/README.md)
-- [ ] 010. [Ordered execution](02_concurrency_primitives/02_ordered_execution/README.md)
-- [ ] 011. [Alternating workers](02_concurrency_primitives/03_alternating_workers/README.md)
-- [ ] 012. [Barrier and molecule assembly](02_concurrency_primitives/04_barrier_h2o/README.md)
-- [ ] 013. [Semaphore concurrency limiter](02_concurrency_primitives/05_semaphore_limiter/README.md)
-- [ ] 014. [Producer-consumer coordination](02_concurrency_primitives/06_producer_consumer/README.md)
-- [ ] 015. [Bounded blocking queue](02_concurrency_primitives/07_bounded_blocking_queue/README.md)
-- [ ] 016. [Deadlock and lock ordering](02_concurrency_primitives/08_deadlock_lock_order/README.md)
-- [ ] 017. [Readers-writers store](02_concurrency_primitives/09_readers_writers/README.md)
-- [ ] 018. [Traffic-light intersection](02_concurrency_primitives/10_traffic_intersection/README.md)
-- [ ] 019. [Cancellation and shutdown](02_concurrency_primitives/11_cancellation_shutdown/README.md)
+- [ ] 009. [Thread-safe counter](<02_concurrency/01_thread_safe_counter_(focus)/README.md>)
+- [ ] 010. [Ordered execution](<02_concurrency/02_ordered_execution_(optional)/README.md>) **[Optional — depth]**
+- [ ] 011. [Alternating workers](<02_concurrency/03_alternating_workers_(optional)/README.md>) **[Optional — depth]**
+- [ ] 012. [Barrier and molecule assembly](<02_concurrency/04_barrier_h2o_(optional)/README.md>) **[Optional — depth]**
+- [ ] 013. [Semaphore concurrency limiter](<02_concurrency/05_semaphore_limiter_(focus)/README.md>)
+- [ ] 014. [Producer-consumer coordination](<02_concurrency/06_producer_consumer_(optional)/README.md>) **[Optional — depth]**
+- [ ] 015. [Bounded blocking queue](<02_concurrency/07_bounded_blocking_queue_(focus)/README.md>)
+- [ ] 016. [Deadlock and lock ordering](<02_concurrency/08_deadlock_lock_order_(focus)/README.md>)
+- [ ] 017. [Readers-writers store](<02_concurrency/09_readers_writers_(optional)/README.md>) **[Optional — depth]**
+- [ ] 018. [Traffic-light intersection](<02_concurrency/10_traffic_intersection_(optional)/README.md>) **[Optional — depth]**
+- [ ] 019. [Cancellation and shutdown](<02_concurrency/11_cancellation_shutdown_(optional)/README.md>) **[Optional — depth]**
 
 ### 03. Executors, dependency graphs, and pipelines
 
-- [ ] 020. [Fixed worker pool](03_executors_graphs/01_worker_pool/README.md)
-- [ ] 021. [Futures and completion](03_executors_graphs/02_futures_completion/README.md)
-- [ ] 022. [Sequential topological sort](03_executors_graphs/03_topological_sort/README.md)
-- [ ] 023. [Parallel topological scheduler with semaphore](03_executors_graphs/04_parallel_topological_scheduler/README.md)
-- [ ] 024. [Dependency scheduler extensions](03_executors_graphs/05_dag_scheduler_advanced/README.md)
-- [ ] 025. [Delayed and priority scheduler](03_executors_graphs/06_delayed_priority_scheduler/README.md)
-- [ ] 026. [Concurrent web crawler](03_executors_graphs/07_web_crawler/README.md)
-- [ ] 027. [Image Transform Pipeline](03_executors_graphs/08_image_transform_pipeline/README.md)
-- [ ] 028. [Map/reduce and fan-out/fan-in](03_executors_graphs/09_map_reduce_pipeline/README.md)
-- [ ] 029. [Batcher and singleflight](03_executors_graphs/10_batcher_singleflight/README.md)
+- [ ] 020. [Fixed worker pool](<03_workers_and_pipelines/01_worker_pool_(focus)/README.md>)
+- [ ] 021. [Futures and completion](<03_workers_and_pipelines/02_futures_completion_(optional)/README.md>) **[Optional — depth]**
+- [ ] 022. [Sequential topological sort](<03_workers_and_pipelines/03_topological_sort_(focus)/README.md>)
+- [ ] 023. [Parallel topological scheduler with semaphore](<03_workers_and_pipelines/04_parallel_topological_scheduler_(focus)/README.md>)
+- [ ] 024. [Dependency scheduler extensions](<03_workers_and_pipelines/05_dag_scheduler_advanced_(optional)/README.md>) **[Optional — depth]**
+- [ ] 025. [Delayed and priority scheduler](<03_workers_and_pipelines/06_delayed_priority_scheduler_(optional)/README.md>) **[Optional — depth]**
+- [ ] 026. [Concurrent web crawler](<03_workers_and_pipelines/07_web_crawler_(optional)/README.md>) **[Optional — depth]**
+- [ ] 027. [Image Transform Pipeline](<03_workers_and_pipelines/08_image_transform_pipeline_(focus)/README.md>)
+- [ ] 028. [Map/reduce and fan-out/fan-in](<03_workers_and_pipelines/09_map_reduce_pipeline_(optional)/README.md>) **[Optional — depth]**
+- [ ] 029. [Batcher and singleflight](<03_workers_and_pipelines/10_batcher_singleflight_(optional)/README.md>) **[Optional — depth]**
 
 ### 04. Data structures and reusable backend components
 
-- [ ] 030. [LRU cache](04_data_components/01_lru_cache/README.md)
-- [ ] 031. [LFU cache](04_data_components/02_lfu_cache/README.md)
-- [ ] 032. [TTL cache and authentication tokens](04_data_components/03_ttl_cache/README.md)
-- [ ] 033. [Time-based and snapshot store](04_data_components/04_versioned_kv_store/README.md)
-- [ ] 034. [Hash map and trie](04_data_components/05_hashmap_trie/README.md)
-- [ ] 035. [Hit counters and streaming statistics](04_data_components/06_stream_counters/README.md)
-- [ ] 036. [Calendar and interval reservations](04_data_components/07_calendar_intervals/README.md)
-- [ ] 037. [Memory allocator simulation](04_data_components/08_memory_allocator/README.md)
-- [ ] 038. [In-memory filesystem](04_data_components/09_filesystem/README.md)
-- [ ] 039. [Text editor and undo/redo](04_data_components/10_editor_undo/README.md)
-- [ ] 040. [Leaderboard and indexed rankings](04_data_components/11_leaderboard_rankings/README.md)
-- [ ] 041. [Connection and resource pool](04_data_components/12_resource_pool/README.md)
+- [ ] 030. [LRU cache](<04_caches_and_pools/01_lru_cache_(focus)/README.md>)
+- [ ] 031. [LFU cache](<04_caches_and_pools/02_lfu_cache_(optional)/README.md>) **[Optional — depth]**
+- [ ] 032. [TTL cache and authentication tokens](<04_caches_and_pools/03_ttl_cache_(focus)/README.md>)
+- [ ] 033. [Time-based and snapshot store](<04_caches_and_pools/04_versioned_kv_store_(optional)/README.md>) **[Optional — depth]**
+- [ ] 034. [Hash map and trie](<04_caches_and_pools/05_hashmap_trie_(optional)/README.md>) **[Optional — depth]**
+- [ ] 035. [Hit counters and streaming statistics](<04_caches_and_pools/06_stream_counters_(optional)/README.md>) **[Optional — depth]**
+- [ ] 036. [Calendar and interval reservations](<04_caches_and_pools/07_calendar_intervals_(optional)/README.md>) **[Optional — depth]**
+- [ ] 037. [Memory allocator simulation](<04_caches_and_pools/08_memory_allocator_(optional)/README.md>) **[Optional — depth]**
+- [ ] 038. [In-memory filesystem](<04_caches_and_pools/09_filesystem_(optional)/README.md>) **[Optional — depth]**
+- [ ] 039. [Text editor and undo/redo](<04_caches_and_pools/10_editor_undo_(optional)/README.md>) **[Optional — depth]**
+- [ ] 040. [Leaderboard and indexed rankings](<04_caches_and_pools/11_leaderboard_rankings_(optional)/README.md>) **[Optional — depth]**
+- [ ] 041. [Connection and resource pool](<04_caches_and_pools/12_resource_pool_(focus)/README.md>)
 
 ### 05. Reliability, APIs, and backend services
 
-- [ ] 042. [Rate Limiter](05_reliability_services/01_rate_limiter/README.md)
-- [ ] 043. [Retry and backoff](05_reliability_services/02_retry_backoff/README.md)
-- [ ] 044. [Circuit breaker](05_reliability_services/03_circuit_breaker/README.md)
-- [ ] 045. [Idempotency store](05_reliability_services/04_idempotency_store/README.md)
-- [ ] 046. [Optimistic concurrency control](05_reliability_services/05_optimistic_concurrency/README.md)
-- [ ] 047. [Retry-Safe Issue Service](05_reliability_services/06_retry_safe_issue_service/README.md)
-- [ ] 048. [URL Shortener Service](05_reliability_services/07_url_shortener/README.md)
-- [ ] 049. [Comments & Replies](05_reliability_services/08_comments_replies/README.md)
-- [ ] 050. [Feature flag](05_reliability_services/09_feature_flags/README.md)
-- [ ] 051. [Notification service](05_reliability_services/10_notification_service/README.md)
-- [ ] 052. [Logging system](05_reliability_services/11_logging_system/README.md)
-- [ ] 053. [Publish/subscribe broker](05_reliability_services/12_pubsub_broker/README.md)
-- [ ] 054. [In-memory message queue](05_reliability_services/13_message_queue/README.md)
-- [ ] 055. [HTTP router and middleware](05_reliability_services/14_http_router_middleware/README.md)
-- [ ] 056. [Authorization and audit trail](05_reliability_services/15_authorization_audit/README.md)
+- [ ] 042. [Rate Limiter](<05_backend_services/01_rate_limiter_(focus)/README.md>)
+- [ ] 043. [Retry and backoff](<05_backend_services/02_retry_backoff_(optional)/README.md>) **[Optional — depth]**
+- [ ] 044. [Circuit breaker](<05_backend_services/03_circuit_breaker_(optional)/README.md>) **[Optional — depth]**
+- [ ] 045. [Idempotency store](<05_backend_services/04_idempotency_store_(optional)/README.md>) **[Optional — depth]**
+- [ ] 046. [Optimistic concurrency control](<05_backend_services/05_optimistic_concurrency_(optional)/README.md>) **[Optional — depth]**
+- [ ] 047. [Retry-Safe Issue Service](<05_backend_services/06_retry_safe_issue_service_(focus)/README.md>)
+- [ ] 048. [URL Shortener Service](<05_backend_services/07_url_shortener_(optional)/README.md>) **[Optional — depth]**
+- [ ] 049. [Comments & Replies](<05_backend_services/08_comments_replies_(optional)/README.md>) **[Optional — depth]**
+- [ ] 050. [Feature flag](<05_backend_services/09_feature_flags_(focus)/README.md>)
+- [ ] 051. [Notification service](<05_backend_services/10_notification_service_(optional)/README.md>) **[Optional — depth]**
+- [ ] 052. [Logging system](<05_backend_services/11_logging_system_(optional)/README.md>) **[Optional — depth]**
+- [ ] 053. [Publish/subscribe broker](<05_backend_services/12_pubsub_broker_(focus)/README.md>)
+- [ ] 054. [In-memory message queue](<05_backend_services/13_message_queue_(focus)/README.md>)
+- [ ] 055. [HTTP router and middleware](<05_backend_services/14_http_router_middleware_(optional)/README.md>) **[Optional — depth]**
+- [ ] 056. [Authorization and audit trail](<05_backend_services/15_authorization_audit_(optional)/README.md>) **[Optional — depth]**
 
 ### 06. Classical object modeling and machine coding
 
-- [ ] 057. [Parking lot](06_classic_lld/01_parking_lot/README.md)
-- [ ] 058. [Elevator system](06_classic_lld/02_elevator/README.md)
-- [ ] 059. [Vending machine](06_classic_lld/03_vending_machine/README.md)
-- [ ] 060. [Expense sharing](06_classic_lld/04_splitwise/README.md)
-- [ ] 061. [Chess and board games](06_classic_lld/05_chess_board_games/README.md)
-- [ ] 062. [Snake and ladder](06_classic_lld/06_snake_ladder/README.md)
-- [ ] 063. [Library management](06_classic_lld/07_library_management/README.md)
-- [ ] 064. [ATM and bank accounts](06_classic_lld/08_atm_bank/README.md)
-- [ ] 065. [Movie and event booking](06_classic_lld/09_ticket_booking/README.md)
-- [ ] 066. [Hotel and room reservations](06_classic_lld/10_hotel_reservations/README.md)
-- [ ] 067. [Food delivery and order workflow](06_classic_lld/11_food_delivery/README.md)
-- [ ] 068. [Ride dispatch](06_classic_lld/12_ride_dispatch/README.md)
-- [ ] 069. [Cart, coupons, and checkout](06_classic_lld/13_shopping_checkout/README.md)
-- [ ] 070. [Auction and order book](06_classic_lld/14_auction_order_book/README.md)
+- [ ] 057. [Parking lot](<06_object_modeling/01_parking_lot_(optional)/README.md>) **[Optional — depth]**
+- [ ] 058. [Elevator system](<06_object_modeling/02_elevator_(focus)/README.md>)
+- [ ] 059. [Vending machine](<06_object_modeling/03_vending_machine_(focus)/README.md>)
+- [ ] 060. [Expense sharing](<06_object_modeling/04_splitwise_(focus)/README.md>)
+- [ ] 061. [Chess and board games](<06_object_modeling/05_chess_board_games_(optional)/README.md>) **[Optional — depth]**
+- [ ] 062. [Snake and ladder](<06_object_modeling/06_snake_ladder_(optional)/README.md>) **[Optional — depth]**
+- [ ] 063. [Library management](<06_object_modeling/07_library_management_(optional)/README.md>) **[Optional — depth]**
+- [ ] 064. [ATM and bank accounts](<06_object_modeling/08_atm_bank_(optional)/README.md>) **[Optional — depth]**
+- [ ] 065. [Movie and event booking](<06_object_modeling/09_ticket_booking_(focus)/README.md>)
+- [ ] 066. [Hotel and room reservations](<06_object_modeling/10_hotel_reservations_(optional)/README.md>) **[Optional — depth]**
+- [ ] 067. [Food delivery and order workflow](<06_object_modeling/11_food_delivery_(optional)/README.md>) **[Optional — depth]**
+- [ ] 068. [Ride dispatch](<06_object_modeling/12_ride_dispatch_(optional)/README.md>) **[Optional — depth]**
+- [ ] 069. [Cart, coupons, and checkout](<06_object_modeling/13_shopping_checkout_(optional)/README.md>) **[Optional — depth]**
+- [ ] 070. [Auction and order book](<06_object_modeling/14_auction_order_book_(optional)/README.md>) **[Optional — depth]**
 
 ### 07. Production-style debugging, persistence, and data repair
 
-- [ ] 071. [Reservation Service Incident](07_debugging_persistence/01_reservation_incident/README.md)
-- [ ] 072. [Loan Lifecycle & Balance Management](07_debugging_persistence/02_loan_lifecycle/README.md)
-- [ ] 073. [Return Risk Assessment](07_debugging_persistence/03_return_risk/README.md)
-- [ ] 074. [Comment Moderation](07_debugging_persistence/04_comment_moderation/README.md)
-- [ ] 075. [Personalized Movie Recommendation](07_debugging_persistence/05_movie_recommendations/README.md)
-- [ ] 076. [Keyword and User Blocking](07_debugging_persistence/06_keyword_user_blocking/README.md)
-- [ ] 077. [Persistent Private Watchlists](07_debugging_persistence/07_private_watchlists/README.md)
-- [ ] 078. [Password Reset](07_debugging_persistence/08_password_reset/README.md)
-- [ ] 079. [File Deduplication](07_debugging_persistence/09_file_deduplication/README.md)
-- [ ] 080. [Transactions and repositories](07_debugging_persistence/10_sqlite_transactions/README.md)
-- [ ] 081. [Write-ahead log and crash recovery](07_debugging_persistence/11_wal_recovery/README.md)
-- [ ] 082. [Reconciliation and repair tooling](07_debugging_persistence/12_repair_reconciliation/README.md)
+- [ ] 071. [Reservation Service Incident](<07_debugging_and_data/01_reservation_incident_(focus)/README.md>)
+- [ ] 072. [Loan Lifecycle & Balance Management](<07_debugging_and_data/02_loan_lifecycle_(focus)/README.md>)
+- [ ] 073. [Return Risk Assessment](<07_debugging_and_data/03_return_risk_(optional)/README.md>) **[Optional — depth]**
+- [ ] 074. [Comment Moderation](<07_debugging_and_data/04_comment_moderation_(optional)/README.md>) **[Optional — depth]**
+- [ ] 075. [Personalized Movie Recommendation](<07_debugging_and_data/05_movie_recommendations_(optional)/README.md>) **[Optional — depth]**
+- [ ] 076. [Keyword and User Blocking](<07_debugging_and_data/06_keyword_user_blocking_(optional)/README.md>) **[Optional — depth]**
+- [ ] 077. [Persistent Private Watchlists](<07_debugging_and_data/07_private_watchlists_(focus)/README.md>)
+- [ ] 078. [Password Reset](<07_debugging_and_data/08_password_reset_(focus)/README.md>)
+- [ ] 079. [File Deduplication](<07_debugging_and_data/09_file_deduplication_(focus)/README.md>)
+- [ ] 080. [Transactions and repositories](<07_debugging_and_data/10_sqlite_transactions_(optional)/README.md>) **[Optional — depth]**
+- [ ] 081. [Write-ahead log and crash recovery](<07_debugging_and_data/11_wal_recovery_(optional)/README.md>) **[Optional — depth]**
+- [ ] 082. [Reconciliation and repair tooling](<07_debugging_and_data/12_repair_reconciliation_(optional)/README.md>) **[Optional — depth]**
 
 ### 08. Advanced integrations and timed capstones
 
-- [ ] 083. [LLM API gateway](08_advanced_capstones/01_llm_gateway/README.md)
-- [ ] 084. [Workflow engine](08_advanced_capstones/02_workflow_engine/README.md)
-- [ ] 085. [Search and autocomplete service](08_advanced_capstones/03_search_autocomplete/README.md)
-- [ ] 086. [Spreadsheet dependency engine](08_advanced_capstones/04_spreadsheet_dependencies/README.md)
-- [ ] 087. [Multi-tenant job service](08_advanced_capstones/05_multitenant_job_service/README.md)
-- [ ] 088. [Timed interview circuit](08_advanced_capstones/06_mock_interviews/README.md)
+- [ ] 083. [LLM API gateway](<08_mocks_and_capstones/01_llm_gateway_(optional)/README.md>) **[Optional — depth]**
+- [ ] 084. [Workflow engine](<08_mocks_and_capstones/02_workflow_engine_(optional)/README.md>) **[Optional — depth]**
+- [ ] 085. [Search and autocomplete service](<08_mocks_and_capstones/03_search_autocomplete_(optional)/README.md>) **[Optional — depth]**
+- [ ] 086. [Spreadsheet dependency engine](<08_mocks_and_capstones/04_spreadsheet_dependencies_(optional)/README.md>) **[Optional — depth]**
+- [ ] 087. [Multi-tenant job service](<08_mocks_and_capstones/05_multitenant_job_service_(optional)/README.md>) **[Optional — depth]**
+- [ ] 088. [Timed interview circuit](<08_mocks_and_capstones/06_mock_interviews_(focus)/README.md>)
 
 ## LeetCode companion checklist
 
-These are algorithm/data-structure drills to support the projects above, not replacements for their API, lifecycle, and failure tests. Links identify exercises; try them locally in all three languages if judge support differs.
+These are optional companion drills to support the projects above, not extra requirements for completing the breadth pass or replacements for core correctness checks. Links identify exercises; try them locally in all three languages if judge support differs.
 
 - [ ] [1114. Print in Order](https://leetcode.com/problems/print-in-order/) — core locally, then relevant concurrency/service extension.
 - [ ] [1115. Print FooBar Alternately](https://leetcode.com/problems/print-foobar-alternately/) — core locally, then relevant concurrency/service extension.
@@ -235,17 +234,17 @@ These are algorithm/data-structure drills to support the projects above, not rep
 - [ ] [641. Design Circular Deque](https://leetcode.com/problems/design-circular-deque/) — core locally, then relevant concurrency/service extension.
 - [ ] [295. Find Median from Data Stream](https://leetcode.com/problems/find-median-from-data-stream/) — core locally, then relevant concurrency/service extension.
 
-Total: **88 ordered problem folders**, **50 companion LeetCode drills**, and three language workspaces per problem. Original `rate_limiter/` notes are unchanged.
+Total: **88 ordered problem folders (30 focus, 58 optional depth)**, **50 companion LeetCode drills**, and three language workspaces per problem.
 
 ## 09. Resume technology setup and operations
 
-Continue with the [resume technology labs](09_resume_technology_labs/README.md): **48 ordered hands-on labs** covering every named resume technology, setup, application integration, injected failures, recovery, and interview explanation. This is separate from the 88 LLD problems above.
+Continue with the [resume technology labs](09_resume_labs/README.md): **48 ordered hands-on labs** covering every named resume technology, setup, application integration, injected failures, recovery, and interview explanation. This is separate from the 88 LLD problems above.
 
-- [ ] [Local environment and languages](09_resume_technology_labs/README.md#01-local-environment-and-languages)
-- [ ] [Databases and cache operations](09_resume_technology_labs/README.md#02-databases-and-cache-operations)
-- [ ] [Messaging, workers, and CDC](09_resume_technology_labs/README.md#03-messaging-workers-and-cdc)
-- [ ] [Backend frameworks and enterprise integrations](09_resume_technology_labs/README.md#04-backend-frameworks-and-enterprise-integrations)
-- [ ] [On-prem packaging, updates, and signing](09_resume_technology_labs/README.md#05-on-prem-packaging-updates-and-signing)
-- [ ] [AWS, Terraform, and CI/CD](09_resume_technology_labs/README.md#06-aws-terraform-and-cicd)
-- [ ] [Frontend, testing, and observability](09_resume_technology_labs/README.md#07-frontend-testing-and-observability)
-- [ ] [AI workflows, RAG, and resume defense](09_resume_technology_labs/README.md#08-ai-workflows-rag-and-resume-defense)
+- [ ] [Local environment and languages](09_resume_labs/README.md#01-local-environment-and-languages)
+- [ ] [Databases and cache operations](09_resume_labs/README.md#02-databases-and-cache-operations)
+- [ ] [Messaging, workers, and CDC](09_resume_labs/README.md#03-messaging-workers-and-cdc)
+- [ ] [Backend frameworks and enterprise integrations](09_resume_labs/README.md#04-backend-frameworks-and-enterprise-integrations)
+- [ ] [On-prem packaging, updates, and signing](09_resume_labs/README.md#05-on-prem-packaging-updates-and-signing)
+- [ ] [AWS, Terraform, and CI/CD](09_resume_labs/README.md#06-aws-terraform-and-cicd)
+- [ ] [Frontend, testing, and observability](09_resume_labs/README.md#07-frontend-testing-and-observability)
+- [ ] [AI workflows, RAG, and resume defense](09_resume_labs/README.md#08-ai-workflows-rag-and-resume-defense)
