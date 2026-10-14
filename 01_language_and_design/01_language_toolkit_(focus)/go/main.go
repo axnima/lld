@@ -9,7 +9,7 @@ import (
 )
 
 // Revision order: definitions below, followed by matching examples in main.
-// Run: go run .    Test: go test -v ./...
+// Run: go run .
 
 // 1. Structs, methods, and validation.
 // A struct groups data; a method attaches behavior to that type.
@@ -238,7 +238,7 @@ func main() {
 		now:    time.Now, // Pass the function without calling it.
 		nextID: generateID(),
 	}
-	// Each run appends two lines in the working directory; tests use t.TempDir().
+	// Each run appends two lines in the working directory.
 	for i, err := range fileService.NotifyAll([]Notification{valid, invalid, valid}) {
 		if err != nil {
 			fmt.Printf("Notification %d failed: %v\n", i+1, err)
